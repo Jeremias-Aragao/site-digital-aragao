@@ -1,28 +1,55 @@
-import { Link } from 'react-router-dom';
+import { GlassCard, NeonButton, SectionTitle } from '../components/Layout'
+import { Cog, LayoutTemplate, Box, ArrowRight } from 'lucide-react'
 
-const pages = [
-  { title: 'Automação de processos', text: 'Para negócios que perdem tempo com tarefas repetitivas, etapas manuais e operação desorganizada.', to: '/automacao' },
-  { title: 'Sistemas sob medida', text: 'Para estruturar o negócio com uma solução própria, focada no seu fluxo e no seu crescimento.', to: '/sistemas' },
-  { title: 'Sites e landing pages', text: 'Para gerar autoridade, apresentar a marca com mais força e criar uma estrutura que venda melhor.', to: '/sites' },
-];
+const solutions = [
+  {
+    icon: Cog,
+    title: 'Automação de processos',
+    text: 'Mais velocidade, menos tarefas manuais e mais consistência operacional.',
+    link: '/automacao',
+  },
+  {
+    icon: Box,
+    title: 'Sistemas sob medida',
+    text: 'Plataformas e painéis criados para a rotina real do seu negócio.',
+    link: '/sistemas',
+  },
+  {
+    icon: LayoutTemplate,
+    title: 'Sites e landing pages',
+    text: 'Presença digital premium com foco em valor percebido e conversão.',
+    link: '/sites',
+  },
+]
 
 export default function SolutionsPage() {
   return (
-    <section className="container section-block">
-      <div className="section-head">
-        <span className="badge">Soluções</span>
-        <h1>Cada página vende uma solução específica.</h1>
-        <p>Em vez de colocar tudo em um único lugar, a Digital Aragão trabalha com páginas mais focadas para aumentar clareza e conversão.</p>
+    <section className="container page-section">
+      <SectionTitle
+        eyebrow="Soluções"
+        title="O que a Digital Aragão faz melhor"
+        text="Cada frente tem um papel claro: organizar, vender melhor e preparar o negócio para crescer com mais estrutura."
+      />
+
+      <div className="cards-grid three">
+        {solutions.map((item) => {
+          const Icon = item.icon
+          return (
+            <GlassCard key={item.title}>
+              <div className="solution-card">
+                <div className="icon-box"><Icon size={22} /></div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <a href={item.link} className="text-link">Ver detalhes <ArrowRight size={16} /></a>
+              </div>
+            </GlassCard>
+          )
+        })}
       </div>
-      <div className="feature-grid">
-        {pages.map((item) => (
-          <div key={item.title} className="feature-card glass neon-frame">
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-            <Link className="btn btn-secondary inline-btn" to={item.to}>Abrir página</Link>
-          </div>
-        ))}
+
+      <div className="center-actions">
+        <NeonButton to="/contato">Quero conversar sobre meu caso</NeonButton>
       </div>
     </section>
-  );
+  )
 }

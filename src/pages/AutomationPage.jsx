@@ -1,20 +1,36 @@
-import { Link } from 'react-router-dom';
+import { GlassCard, NeonButton, SectionTitle } from '../components/Layout'
+
+const items = [
+  'Mapeamento do processo atual',
+  'Redução de tarefas repetitivas',
+  'Mais velocidade operacional',
+  'Menos falha manual e mais consistência',
+]
 
 export default function AutomationPage() {
   return (
-    <section className="container section-block narrow-page">
-      <span className="badge">Automação de processos</span>
-      <h1>Pare de perder tempo com etapas manuais que travam sua operação.</h1>
-      <p className="lead">A proposta aqui é clara: reduzir retrabalho, acelerar execução e dar mais controle ao negócio com processos automatizados e mais inteligentes.</p>
-      <div className="content-list glass neon-frame">
-        <div><strong>Dor:</strong><span>planilhas confusas, tarefas repetitivas, demora e dependência excessiva de pessoas.</span></div>
-        <div><strong>Solução:</strong><span>criação de fluxo digital mais organizado, reduzindo gargalo e aumentando produtividade.</span></div>
-        <div><strong>Benefício:</strong><span>menos erro, mais velocidade, mais clareza e mais estrutura para crescer.</span></div>
-      </div>
-      <div className="cta-row">
-        <Link to="/contato" className="btn btn-primary neon-btn">Quero automatizar meu negócio</Link>
-        <Link to="/faq" className="btn btn-secondary">Tirar dúvidas</Link>
+    <section className="container page-section">
+      <SectionTitle
+        eyebrow="Automação de processos"
+        title="Se o processo é repetitivo, ele está te custando tempo, energia e dinheiro."
+        text="Automação não é luxo. É ganho real de produtividade. A proposta aqui é transformar um fluxo manual e cansativo em algo mais leve, rápido e controlável."
+      />
+
+      <div className="split-section">
+        <GlassCard>
+          <div className="feature-stack">
+            {items.map((item) => <div key={item}>{item}</div>)}
+          </div>
+        </GlassCard>
+        <GlassCard>
+          <div className="content-box">
+            <h3>Quando faz sentido automatizar?</h3>
+            <p>Quando existe repetição, dependência de etapas humanas, atraso entre tarefas e perda de controle em processos internos.</p>
+            <p>Esse tipo de solução faz sentido para operações administrativas, atendimento, rotinas comerciais, fluxos internos e processos digitais de várias naturezas.</p>
+            <NeonButton to="/contato">Solicitar análise de automação</NeonButton>
+          </div>
+        </GlassCard>
       </div>
     </section>
-  );
+  )
 }

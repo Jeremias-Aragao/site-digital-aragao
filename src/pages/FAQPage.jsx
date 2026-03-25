@@ -1,38 +1,31 @@
-const faqs = [
-  {
-    q: 'Quanto tempo leva para um projeto ficar pronto?',
-    a: 'Depende da complexidade, mas a estrutura do site já foi pensada para apresentar isso com clareza e facilitar a negociação.'
-  },
-  {
-    q: 'Preciso entender de tecnologia para contratar?',
-    a: 'Não. A proposta da Digital Aragão é traduzir o problema do negócio em uma solução mais clara e mais eficiente.'
-  },
-  {
-    q: 'O projeto pode crescer depois?',
-    a: 'Sim. A estrutura é pensada para evoluir com novas páginas, novos módulos e novas etapas.'
-  },
-  {
-    q: 'Vocês fazem só sites?',
-    a: 'Não. A Digital Aragão trabalha com automação, sistemas sob medida e páginas de venda com foco em conversão.'
-  }
-];
+import { GlassCard, SectionTitle } from '../components/Layout'
 
-export default function FAQPage() {
+const faqs = [
+  ['Quanto tempo leva?', 'Depende da complexidade. Páginas mais diretas tendem a sair mais rápido; projetos maiores pedem escopo e cronograma.'],
+  ['Vocês fazem só site?', 'Não. A Digital Aragão também trabalha com automação de processos e sistemas sob medida.'],
+  ['O site já fica pronto para hospedar?', 'Sim. A estrutura dessa versão já foi pensada para GitHub e Render.'],
+  ['Dá para integrar formulário e pagamento?', 'Sim. O projeto pode ser conectado a ferramentas de lead, automação, checkout e meios de pagamento.'],
+]
+
+export default function FaqPage() {
   return (
-    <section className="container section-block narrow-page">
-      <div className="section-head">
-        <span className="badge">Central de dúvidas</span>
-        <h1>Remova objeções antes mesmo do cliente perguntar.</h1>
-        <p>Essa página ajuda a passar mais segurança, deixar o processo mais claro e apoiar a conversão.</p>
-      </div>
+    <section className="container page-section">
+      <SectionTitle
+        eyebrow="FAQ"
+        title="Dúvidas que normalmente travam a decisão do cliente"
+        text="Uma boa central de perguntas reduz insegurança e tira peso da conversa comercial."
+      />
+
       <div className="faq-list">
-        {faqs.map((item) => (
-          <div key={item.q} className="faq-item glass neon-frame">
-            <h3>{item.q}</h3>
-            <p>{item.a}</p>
-          </div>
+        {faqs.map(([q, a]) => (
+          <GlassCard key={q}>
+            <div className="faq-item">
+              <h3>{q}</h3>
+              <p>{a}</p>
+            </div>
+          </GlassCard>
         ))}
       </div>
     </section>
-  );
+  )
 }

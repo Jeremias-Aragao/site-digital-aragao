@@ -1,6 +1,6 @@
-# Digital Aragão R05
+# Digital Aragão R06
 
-Projeto React + Vite com múltiplas páginas e visual premium.
+Site multi-páginas premium em React + Vite, pronto para GitHub e Render.
 
 ## Rodar localmente
 
@@ -18,6 +18,13 @@ npm run preview
 
 ## Deploy no Render
 
-- Suba a pasta no GitHub
-- Crie um novo Web Service / Static Site no Render
-- O arquivo `render.yaml` já está incluído
+Use **Static Site**.
+
+- Build Command: `npm install && npm run build`
+- Publish Directory: `dist`
+
+Também foi incluído `render.yaml` e `_redirects` para facilitar o deploy.
+
+## Observação
+
+Os CTAs principais já levam para WhatsApp. O formulário está pronto visualmente e pode ser integrado com Formspree, Resend, n8n, Make ou backend próprio.

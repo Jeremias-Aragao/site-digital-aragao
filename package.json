@@ -1,5 +1,5 @@
 {
-  "name": "digital-aragao-r05",
+  "name": "digital-aragao-r06",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,14 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "framer-motion": "^12.6.2",
-    "lucide-react": "^0.511.0",
+    "framer-motion": "^11.11.9",
+    "lucide-react": "^0.460.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.30.0"
+    "react-router-dom": "^6.28.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^4.3.3",
     "vite": "^5.4.10"
   }
 }

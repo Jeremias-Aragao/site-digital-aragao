@@ -1,20 +1,38 @@
-import { Link } from 'react-router-dom';
+import { GlassCard, NeonButton, SectionTitle } from '../components/Layout'
+
+const points = [
+  'Design premium e visual memorável',
+  'Estrutura de página com foco em conversão',
+  'Experiência forte no mobile',
+  'CTA claro e distribuído com inteligência',
+]
 
 export default function WebsitesPage() {
   return (
-    <section className="container section-block narrow-page">
-      <span className="badge">Sites e landing pages</span>
-      <h1>Visual premium, direção estratégica e páginas pensadas para vender mais.</h1>
-      <p className="lead">Não basta ter presença online. O site precisa transmitir valor, gerar confiança e conduzir o visitante para a ação certa.</p>
-      <div className="content-list glass neon-frame">
-        <div><strong>Objetivo:</strong><span>passar autoridade, destacar a marca e aumentar a conversão com uma experiência mais fluida.</span></div>
-        <div><strong>Visual:</strong><span>estética premium, neons dinâmicos, glow elegante e sensação tecnológica de alto valor.</span></div>
-        <div><strong>Estratégia:</strong><span>CTA fortes, páginas com objetivo claro e uma navegação que guia o cliente.</span></div>
-      </div>
-      <div className="cta-row">
-        <Link to="/contato" className="btn btn-primary neon-btn">Quero um site assim</Link>
-        <Link to="/comecar" className="btn btn-secondary">Voltar para o início</Link>
+    <section className="container page-section">
+      <SectionTitle
+        eyebrow="Sites e landing pages"
+        title="Seu site precisa parecer mais valioso do que a média do mercado."
+        text="Quando o visual, a copy e a jornada trabalham juntos, o site deixa de ser só uma vitrine e começa a funcionar como parte real do processo de venda."
+      />
+
+      <div className="split-section">
+        <GlassCard>
+          <div className="content-box">
+            <h3>O que entra na entrega</h3>
+            <ul className="clean-list">
+              {points.map((p) => <li key={p}>{p}</li>)}
+            </ul>
+          </div>
+        </GlassCard>
+        <GlassCard>
+          <div className="content-box">
+            <h3>Para quem é ideal</h3>
+            <p>Para marcas que querem vender melhor, transmitir mais autoridade, elevar valor percebido e parar de parecer amadoras no digital.</p>
+            <NeonButton to="/contato">Quero um site premium</NeonButton>
+          </div>
+        </GlassCard>
       </div>
     </section>
-  );
+  )
 }
